@@ -1,0 +1,1422 @@
+@import "../docs/grean-world-brand-assets-v2.0-complete/styles/brand-variables.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/digital-display.css';
+@import '../styles/responsive.css';
+
+/* Line clamp utilities for consistent card heights */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@layer base {
+  :root {
+    /* Enhanced Light theme variables - Green Energy Brand */
+    --background: 120 20% 97%;           /* Very light green-tinted white */
+    --foreground: 142 65% 25%;           /* Hero titles & description text - #156234 */
+
+    --card: 120 15% 95%;                 /* Light green-tinted card background */
+    --card-foreground: 142 65% 25%;      /* Hero titles & description text - #156234 */
+
+    --popover: 120 20% 98%;              /* Slightly green-tinted popover */
+    --popover-foreground: 142 65% 25%;   /* Hero titles & description text - #156234 */
+
+    --primary: 142 65% 28%;              /* Buttons - #167a3c */
+    --primary-foreground: 120 20% 98%;   /* Light background for primary text */
+
+    --secondary: 120 25% 92%;            /* Light green secondary */
+    --secondary-foreground: 142 65% 25%; /* Hero titles & description text - #156234 */
+
+    --muted: 120 20% 94%;                /* Muted green background */
+    --muted-foreground: 142 65% 25%;     /* Hero titles & description text - #156234 */
+
+    --accent: 142 60% 85%;               /* Light green accent */
+    --accent-foreground: 142 65% 25%;    /* Hero titles & description text - #156234 */
+
+    --destructive: 0 84.2% 60.2%;        /* Red for destructive actions */
+    --destructive-foreground: 120 20% 98%; /* Light text on destructive */
+
+    --border: 120 20% 88%;               /* Light green border */
+    --input: 120 20% 94%;                /* Light green input background */
+    --ring: 142 65% 28%;                 /* Buttons focus ring - #167a3c */
+
+    /* Custom brand colors for light mode - Updated to match requirements */
+    --brand-primary: 142 65% 28%;        /* Buttons - #167a3c */
+    --brand-secondary: 142 76% 36%;      /* Small text titles - #3dd56d */
+    --brand-accent: 120 60% 85%;         /* Light green accent */
+    --brand-surface: 120 15% 96%;        /* Light surface color */
+
+    /* Specific color variables for new requirements */
+    --hero-title: 142 65% 25%;           /* Hero titles - #156234 */
+    --button-color: 142 65% 28%;         /* Buttons - #167a3c */
+    --small-title: 142 76% 36%;          /* Small text titles - #3dd56d */
+    --description-text: 142 65% 25%;     /* Description text - #156234 */
+
+    --radius: 0.5rem;
+
+    /* Theme-specific colors - Updated */
+    --grean-primary: 142 65% 28%;        /* Buttons - #167a3c */
+    --grean-secondary: 142 76% 36%;      /* Small text titles - #3dd56d */
+    --grean-accent: 142 65% 25%;         /* Hero titles & description - #156234 */
+  }
+
+  .dark {
+    /* Enhanced Dark theme variables - Green Energy Brand */
+    --background: 210 65% 8%;        /* Dark Background (#021429) */
+    --foreground: 0 0% 100%;         /* Pure White Text */
+
+    --card: 210 50% 12%;             /* Dark navy card background */
+    --card-foreground: 0 0% 100%;    /* White text on dark cards */
+
+    --popover: 210 50% 12%;          /* Dark navy popover */
+    --popover-foreground: 0 0% 100%; /* White text */
+
+    --primary: 142 76% 36%;          /* Brand green #3DD56D */
+    --primary-foreground: 210 65% 8%; /* Dark background for primary text */
+
+    --secondary: 210 40% 15%;        /* Dark secondary background */
+    --secondary-foreground: 0 0% 100%; /* White text */
+
+    --muted: 158 30% 15%;            /* Darker green for muted */
+    --muted-foreground: 0 0% 80%;    /* Light gray text */
+
+    --accent: 158 45% 20%;           /* Dark Green for accent */
+    --accent-foreground: 0 0% 100%;  /* White text */
+
+    --destructive: 0 62.8% 30.6%;    /* Keep red for destructive */
+    --destructive-foreground: 0 0% 100%; /* White text */
+
+    --border: 158 30% 25%;           /* Slightly lighter green for borders */
+    --input: 158 45% 20%;            /* Dark Green for inputs */
+    --ring: 0 0% 100%;               /* White for focus rings */
+
+    /* Theme-specific colors for dark mode */
+    --grean-primary: 142 76% 36%;
+    --grean-secondary: 158 64% 52%;
+    --grean-accent: 120 100% 40%;
+  }
+
+  .light {
+    /* Enhanced Light theme overrides - Updated for new color scheme */
+    --background: 120 20% 97%;
+    --foreground: 142 65% 25%;           /* Hero titles & description text - #156234 */
+
+    /* Updated specific color variables for light theme */
+    --hero-title: 142 65% 25%;           /* Hero titles - #156234 */
+    --button-color: 142 65% 28%;         /* Buttons - #167a3c */
+    --small-title: 142 76% 36%;          /* Small text titles - #3dd56d */
+    --description-text: 142 65% 25%;     /* Description text - #156234 */
+
+    /* Light theme specific background with green energy gradient */
+    background: linear-gradient(135deg,
+      hsl(120, 30%, 98%) 0%,     /* Very light green-white */
+      hsl(140, 25%, 95%) 25%,    /* Light mint */
+      hsl(160, 20%, 92%) 50%,    /* Soft green-gray */
+      hsl(120, 15%, 94%) 75%,    /* Light sage */
+      hsl(100, 20%, 96%) 100%    /* Pale green-white */
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* Removed black background override to allow light theme background */
+  color-scheme: light dark;
+}
+
+/* Removed problematic mb-6 override - using proper responsive spacing instead */
+
+/* Consistent spacing utilities for Green Energy sections */
+.green-section-spacing {
+  padding-top: clamp(3rem, 8vw, 5rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.green-hero-spacing {
+  margin-top: clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.green-card-spacing {
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.green-text-spacing {
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Consistent container max-widths */
+.green-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+/* Touch-friendly interactive elements */
+.green-touch-target {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Add floating animation for particles */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-60px) translateX(5px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced floating animation with rotation */
+@keyframes floatEnhanced {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px) rotate(-5deg);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-60px) translateX(5px) rotate(3deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Eco-friendly leaf float animation */
+@keyframes leafFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-15px) translateX(5px) rotate(5deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-25px) translateX(-5px) rotate(-5deg);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-35px) translateX(3px) rotate(3deg);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Sun rays animation */
+@keyframes sunRays {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2) rotate(5deg);
+  }
+}
+
+/* Wind flow animation */
+@keyframes windFlow {
+  0% {
+    transform: translateX(-100%) scaleY(0.5);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translateX(0%) scaleY(1);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(100%) scaleY(0.5);
+    opacity: 0.05;
+  }
+}
+
+/* Water drop animation */
+@keyframes waterDrop {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.1;
+  }
+  70% {
+    transform: translateY(50px) scale(0.8);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(70px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(74, 222, 128, 0.8));
+  }
+}
+
+/* Text glow animation */
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(74, 222, 128, 0.5);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(74, 222, 128, 0.8),
+      0 0 30px rgba(74, 222, 128, 0.4);
+  }
+}
+
+/* Energy pulse animation */
+@keyframes energyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Data flow animation */
+@keyframes dataFlow {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+.react-flow__edge-path {
+  transition:
+    stroke 0.3s,
+    filter 0.3s,
+    opacity 0.3s;
+}
+
+.react-flow__handle {
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.react-flow__handle-connecting {
+  background: #4ade80 !important;
+  box-shadow: 0 0 10px 2px rgba(74, 222, 128, 0.8);
+}
+
+.react-flow__handle-valid {
+  background: #4ade80 !important;
+  box-shadow: 0 0 10px 2px rgba(74, 222, 128, 0.8);
+}
+
+.react-flow__background {
+  opacity: 0.2;
+}
+
+/* Enhanced edge path styling */
+.react-flow__edge-path.active {
+  stroke: #4ade80;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 5px rgba(74, 222, 128, 0.5));
+  animation: dataFlow 3s infinite linear;
+}
+
+/* Enhanced node styling */
+.react-flow__node.active {
+  filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.7));
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Ensure ReactFlow container fills available space */
+html,
+body,
+#__next,
+.react-flow,
+.react-flow__container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure full viewport coverage and hide scrollbars */
+html,
+body,
+#root,
+.app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbars completely */
+html {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Hide scrollbars for webkit browsers */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Ensure Next.js root container fits viewport */
+#__next {
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Force ReactFlow to fill container */
+.react-flow {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-flow__renderer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-flow__container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Remove any potential margins/padding */
+.react-flow__viewport {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform-origin: 0 0 !important;
+}
+
+.react-flow__renderer {
+  width: 100%;
+  height: 100%;
+}
+
+/* Fix for ReactFlow container */
+.react-flow__pane {
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced theme-aware eco-glass effect */
+.eco-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark theme eco-glass */
+.dark .eco-glass {
+  background: rgba(2, 20, 41, 0.6);
+  border: 1px solid rgba(61, 213, 109, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme eco-glass */
+.light .eco-glass {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(61, 213, 109, 0.3);
+  box-shadow: 0 8px 32px rgba(61, 213, 109, 0.1);
+}
+
+/* Enhanced theme-aware sustainable pattern */
+.sustainable-pattern {
+  background-size: 20px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark .sustainable-pattern {
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgba(61, 213, 109, 0.1) 2px,
+    transparent 0
+  );
+}
+
+.light .sustainable-pattern {
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgba(16, 185, 129, 0.15) 2px,
+    transparent 0
+  );
+}
+
+/* Theme-aware text colors */
+.text-theme-primary {
+  @apply text-gray-900 dark:text-white;
+}
+
+.text-theme-secondary {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.text-theme-muted {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+/* Theme-aware background colors */
+.bg-theme-surface {
+  @apply bg-white dark:bg-slate-900;
+}
+
+.bg-theme-card {
+  @apply bg-gray-50 dark:bg-slate-800;
+}
+
+/* Brand-specific theme colors - Updated for new light mode scheme */
+.text-brand-primary {
+  color: #167a3c; /* Buttons color */
+}
+
+.bg-brand-primary {
+  background-color: #167a3c; /* Buttons color */
+}
+
+.border-brand-primary {
+  border-color: #167a3c; /* Buttons color */
+}
+
+/* New utility classes for specific color requirements */
+.text-hero-title {
+  color: hsl(var(--hero-title)); /* #156234 - Hero titles */
+}
+
+.text-button-color {
+  color: hsl(var(--button-color)); /* #167a3c - Buttons */
+}
+
+.text-small-title {
+  color: hsl(var(--small-title)); /* #3dd56d - Small text titles */
+}
+
+.text-description {
+  color: hsl(var(--description-text)); /* #156234 - Description text */
+}
+
+.bg-hero-title {
+  background-color: hsl(var(--hero-title)); /* #156234 */
+}
+
+.bg-button-color {
+  background-color: hsl(var(--button-color)); /* #167a3c */
+}
+
+.bg-small-title {
+  background-color: hsl(var(--small-title)); /* #3dd56d */
+}
+
+.border-hero-title {
+  border-color: hsl(var(--hero-title)); /* #156234 */
+}
+
+.border-button-color {
+  border-color: hsl(var(--button-color)); /* #167a3c */
+}
+
+.border-small-title {
+  border-color: hsl(var(--small-title)); /* #3dd56d */
+}
+
+/* Green page theme-aware backgrounds */
+.bg-grean-light-main {
+  background: linear-gradient(135deg,
+    hsl(120, 30%, 98%) 0%,     /* Very light green-white */
+    hsl(140, 25%, 95%) 25%,    /* Light mint */
+    hsl(160, 20%, 92%) 50%,    /* Soft green-gray */
+    hsl(120, 15%, 94%) 75%,    /* Light sage */
+    hsl(100, 20%, 96%) 100%    /* Pale green-white */
+  ) !important;
+  transition: background 0.3s ease-in-out;
+}
+
+.bg-grean-dark-main {
+  background: linear-gradient(135deg, #011428 0%, #021428 100%) !important; /* Custom deep dark blue-green gradient */
+  transition: background 0.3s ease-in-out;
+}
+
+/* Enhanced premium background utilities for main page */
+.bg-premium-light {
+  background: linear-gradient(135deg,
+    hsl(120, 30%, 98%) 0%,     /* Very light green-white */
+    hsl(140, 25%, 95%) 25%,    /* Light mint */
+    hsl(160, 20%, 92%) 50%,    /* Soft green-gray */
+    hsl(120, 15%, 94%) 75%,    /* Light sage */
+    hsl(100, 20%, 96%) 100%    /* Pale green-white */
+  ) !important;
+  transition: background 0.3s ease-in-out;
+}
+
+.bg-premium-dark {
+  background: linear-gradient(135deg, #011428 0%, #021428 100%) !important;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Premium text utilities matching green page */
+.text-premium-primary {
+  color: #3DD56D; /* Green page primary green */
+}
+
+.text-premium-secondary {
+  color: #167a3c; /* Green page button color */
+}
+
+.text-premium-accent {
+  color: #156234; /* Green page hero title color */
+}
+
+/* Leaf pattern */
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='rgba(74, 222, 128, 0.1)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3v12'%3E%3C/path%3E%3Cpath d='M18 9a3 3 0 0 0-3-3H7.82a3 3 0 0 0-1.82.6l-2.36 1.88a3 3 0 0 0 0 4.24l2.36 1.88a3 3 0 0 0 1.82.6H15a3 3 0 0 0 3-3'%3E%3C/path%3E%3Cpath d='M6 21V11'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: space;
+}
+
+/* Energy flow particle */
+.energy-particle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(74, 222, 128, 0.7);
+  filter: blur(2px);
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Full screen app with no scrollbars */
+html,
+body {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important; /* Completely prevent scrollbars */
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+  position: fixed !important;
+  inset: 0 !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Override any scrollbar settings for all elements */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Force-hide any potential scrollbar */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Target the main element to ensure it has proper overflow behavior */
+main {
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+
+main::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#__next {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  inset: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure sections expand properly */
+section {
+  width: 100%;
+}
+
+/* Responsive Design Utilities */
+@layer utilities {
+  /* Hide scrollbars */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  /* Touch targets for mobile */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Responsive text scaling */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  .text-responsive-base {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .text-responsive-3xl {
+    font-size: clamp(1.875rem, 6vw, 2.5rem);
+  }
+  .text-responsive-4xl {
+    font-size: clamp(2.25rem, 7vw, 3rem);
+  }
+
+  /* Responsive spacing */
+  .space-responsive-sm {
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+  .space-responsive-md {
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+  .space-responsive-lg {
+    gap: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  /* Container responsive padding */
+  .container-responsive {
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+}
+
+/* Improve responsive behavior for the interactive demo */
+@media (max-width: 768px) {
+  .demo-container {
+    transform: scale(0.8);
+    transform-origin: center center;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .demo-container {
+    transform: scale(0.7);
+    transform-origin: center center;
+    padding: 0.25rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .demo-container {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+}
+
+@media (max-height: 600px) {
+  .demo-container {
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+}
+
+@media (max-height: 500px) {
+  .demo-container {
+    transform: scale(0.7);
+    transform-origin: center center;
+  }
+}
+
+/* Custom Scrollbar Styles */
+.sister-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(61, 213, 109, 0.5) rgba(31, 41, 55, 0.5);
+}
+
+.sister-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.sister-scrollbar::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 6px;
+}
+
+.sister-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(61, 213, 109, 0.5);
+  border-radius: 6px;
+  border: 3px solid rgba(31, 41, 55, 0.5);
+}
+
+.sister-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(61, 213, 109, 0.7);
+}
+
+/* Logo animation fixes */
+.logo-spin::before,
+.logo-spin::after {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Pulse animation fix */
+span.inline-block.w-2.h-2.rounded-full.bg-sky-300.animate-pulse {
+  background-color: rgba(14, 165, 233, 0.7) !important;
+}
+
+/* Fix for any particles that might have white color */
+.particle {
+  background-color: rgba(74, 222, 128, 0.4) !important; /* Transparent green */
+  border: none !important;
+  box-shadow: 0 0 5px rgba(74, 222, 128, 0.3) !important;
+}
+
+/* Ensure header has no white borders */
+header {
+  border: none !important;
+}
+
+/* Add smooth transitions for all elements to prevent white flashes */
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Ensure all borders are transparent during transitions */
+*::before,
+*::after {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Override any green borders to be transparent */
+.border-green-400\/30 {
+  border-color: rgba(74, 222, 128, 0) !important;
+}
+
+/* Mobile-specific layout fixes for green page */
+@media (max-width: 767px) {
+  /* Ensure all cards have proper mobile spacing */
+  .card-mobile-fix {
+    margin: 0.5rem !important;
+    padding: 1rem !important;
+    min-height: auto !important;
+  }
+
+  /* Fix text overflow on mobile */
+  .text-mobile-responsive {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Ensure images don't overflow on mobile */
+  .image-mobile-contain {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Fix grid layouts on mobile */
+  .grid-mobile-stack {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Ensure proper touch targets */
+  .touch-target {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Fix visual elements that might overflow */
+  .visual-mobile-contain {
+    max-width: 90vw !important;
+    max-height: 50vh !important;
+    overflow: hidden !important;
+  }
+
+  /* Ensure proper card content spacing */
+  .card-content-mobile {
+    padding: 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Fix button spacing on mobile */
+  .button-mobile-spacing {
+    margin: 0.5rem 0 !important;
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+/* Tablet-specific fixes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Ensure proper tablet layout */
+  .tablet-responsive {
+    padding: 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Fix card heights on tablet */
+  .card-tablet-height {
+    min-height: 400px !important;
+  }
+}
+
+/* Ensure no content is cut off by overflow hidden */
+.safe-overflow {
+  overflow: visible !important;
+}
+
+/* Fix any potential z-index issues */
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Ensure proper text scaling */
+.text-scale-responsive {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  line-height: 1.5;
+}
+
+/* Specific fix for Grean World Energy card - Comprehensive layout fix */
+.solutions-container .w-full.min-h-\[500px\],
+.solutions-container .w-full.min-h-\[600px\],
+.solutions-container .w-full.min-h-\[630px\] {
+  /* Remove fixed heights and use auto height to eliminate empty space */
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Ensure the card content fills properly without empty space */
+.solutions-container .flex.min-h-full.flex-col {
+  min-height: auto !important;
+}
+
+.solutions-container .flex.flex-col.lg\:flex-row.min-h-full.flex-grow {
+  min-height: auto !important;
+  align-items: stretch !important;
+}
+
+/* Fix left content section to take appropriate space */
+.solutions-container .w-full.lg\:w-\[55\%\] {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 400px !important; /* Reasonable minimum height */
+}
+
+/* Fix right visual section to match left content height */
+.solutions-container .w-full.lg\:w-\[45\%\] {
+  min-height: 400px !important; /* Match left section minimum */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure content sections have proper spacing */
+.solutions-container .space-y-3 > *,
+.solutions-container .space-y-4 > *,
+.solutions-container .space-y-6 > * {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Ensure bottom elements are always visible and properly positioned */
+.solutions-container .mt-auto {
+  margin-top: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* Fix any potential overflow issues in the card */
+.solutions-container .overflow-hidden {
+  overflow: visible !important;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .solutions-container .w-full.lg\:w-\[55\%\],
+  .solutions-container .w-full.lg\:w-\[45\%\] {
+    min-height: auto !important;
+  }
+
+  .solutions-container .min-h-\[200px\],
+  .solutions-container .min-h-\[250px\],
+  .solutions-container .min-h-\[300px\],
+  .solutions-container .min-h-\[350px\],
+  .solutions-container .min-h-\[400px\] {
+    min-height: 200px !important;
+  }
+}
+
+/* Additional layout fixes for better card proportions */
+.solutions-container .flex.flex-col.lg\:flex-row {
+  align-items: stretch !important;
+}
+
+/* Ensure visual section scales properly with content */
+@media (min-width: 1024px) {
+  .solutions-container .w-full.lg\:w-\[45\%\] {
+    min-height: 450px !important;
+  }
+
+  .solutions-container .w-full.lg\:w-\[55\%\] {
+    min-height: 450px !important;
+  }
+}
+
+/* Tablet-specific fixes for the card */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .solutions-container .min-h-\[600px\] {
+    min-height: auto !important;
+  }
+}
+
+/* Comprehensive fixes for all product cards - Remove empty space */
+/* Target all product cards with fixed heights */
+.w-full.min-h-\[400px\],
+.w-full.min-h-\[500px\],
+.w-full.min-h-\[600px\],
+.w-full.min-h-\[675px\],
+.w-full.min-h-\[627px\] {
+  /* Remove fixed heights to eliminate empty space */
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Ensure product card content fills properly without empty space */
+.flex.min-h-full.flex-col {
+  min-height: auto !important;
+}
+
+.flex.flex-col.lg\:flex-row.flex-grow {
+  min-height: auto !important;
+  align-items: stretch !important;
+}
+
+/* Fix left and right sections to take appropriate space */
+.w-full.lg\:w-\[55\%\],
+.w-full.lg\:w-\[45\%\] {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  min-height: 400px !important; /* Reasonable minimum height */
+}
+
+/* Ensure visual sections match content height */
+.w-full.lg\:w-\[45\%\] {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure all product card bottom elements are visible */
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+  margin-top: auto !important;
+}
+
+/* Fix any potential overflow in product cards */
+.overflow-hidden {
+  overflow: visible !important;
+}
+
+/* Fix for green card hashtag overlap issue */
+.green-card-hashtags {
+  position: relative !important;
+  z-index: 50 !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(71, 85, 105, 0.5) !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+/* Ensure proper spacing in product cards */
+.space-y-4 > *,
+.space-y-6 > *,
+.space-y-8 > * {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Mobile-specific adjustments for product cards */
+@media (max-width: 767px) {
+  .w-full.lg\:w-\[55\%\],
+  .w-full.lg\:w-\[45\%\] {
+    min-height: auto !important;
+  }
+
+  .min-h-\[200px\],
+  .min-h-\[250px\],
+  .min-h-\[300px\],
+  .min-h-\[350px\],
+  .min-h-\[400px\] {
+    min-height: 200px !important;
+  }
+}
+
+/* Premium eco-inspired animations for GreenAbout section */
+@keyframes ecoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) rotate(-3deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(-15px) rotate(2deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes energyRipple3D {
+  0% {
+    transform: scale(0.8) rotateX(0deg);
+    opacity: 0.8;
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.2) rotateX(180deg);
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(2) rotateX(360deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+@keyframes premiumGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(61, 213, 109, 0.3),
+      0 0 40px rgba(61, 213, 109, 0.1),
+      inset 0 0 20px rgba(61, 213, 109, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(61, 213, 109, 0.5),
+      0 0 60px rgba(61, 213, 109, 0.2),
+      inset 0 0 30px rgba(61, 213, 109, 0.1);
+  }
+}
+
+@keyframes morphingBackground {
+  0%, 100% {
+    border-radius: 20px;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 25px 15px 20px 30px;
+    transform: rotate(1deg) scale(1.01);
+  }
+  50% {
+    border-radius: 15px 25px 30px 20px;
+    transform: rotate(-1deg) scale(0.99);
+  }
+  75% {
+    border-radius: 30px 20px 15px 25px;
+    transform: rotate(0.5deg) scale(1.005);
+  }
+}
+
+@keyframes energyBurst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Premium animation utility classes */
+.eco-float {
+  animation: ecoFloat 6s ease-in-out infinite;
+}
+
+.energy-ripple-3d {
+  animation: energyRipple3D 3s ease-out infinite;
+}
+
+.premium-glow {
+  animation: premiumGlow 4s ease-in-out infinite;
+}
+
+.morphing-bg {
+  animation: morphingBackground 8s ease-in-out infinite;
+}
+
+.energy-burst {
+  animation: energyBurst 2s ease-out infinite;
+}
+
+/* GPU acceleration for premium animations */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Make background gradients transparent */
+.bg-gradient-to-t.from-green-400\/50.to-transparent {
+  background: transparent !important;
+  background-image: linear-gradient(
+    to top,
+    rgba(74, 222, 128, 0.1),
+    transparent
+  ) !important;
+}
+
+/* Add animation keyframes for float effects */
+@keyframes floatIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0.8;
+  }
+}
+
+.float-in {
+  animation: floatIn 0.8s forwards;
+}
+
+.float-out {
+  animation: floatOut 0.8s forwards;
+}
+
+/* Ensure particles are transparent */
+.particle {
+  background-color: rgba(74, 222, 128, 0.2) !important;
+  border: none !important;
+}
+
+/* Section container styling for single-page layout */
+.section-container {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.section-container:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(74, 222, 128, 0.3),
+    transparent
+  );
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow: -moz-scrollbars-none; /* Old Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb,
+.hide-scrollbar::-webkit-scrollbar-track,
+.hide-scrollbar::-webkit-scrollbar-button,
+.hide-scrollbar::-webkit-scrollbar-track-piece,
+.hide-scrollbar::-webkit-scrollbar-corner,
+.hide-scrollbar::-webkit-resizer {
+  display: none;
+  background: transparent;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Add this at the top of the file */
+/* Hide scrollbars while keeping scroll functionality */
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

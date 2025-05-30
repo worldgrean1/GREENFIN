@@ -1,0 +1,254 @@
+/* Custom Rich Text Editor Styles for GREAN WORLD Letterhead Generator */
+
+/* Light Mode Styles */
+.quill-light .ql-toolbar {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px 8px 0 0;
+  background: #f9fafb;
+}
+
+.quill-light .ql-container {
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background: white;
+}
+
+.quill-light .ql-editor {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  min-height: 250px;
+}
+
+.quill-light .ql-toolbar .ql-stroke {
+  stroke: #6b7280;
+}
+
+.quill-light .ql-toolbar .ql-fill {
+  fill: #6b7280;
+}
+
+.quill-light .ql-toolbar button:hover .ql-stroke {
+  stroke: #3DD56D;
+}
+
+.quill-light .ql-toolbar button:hover .ql-fill {
+  fill: #3DD56D;
+}
+
+.quill-light .ql-toolbar button.ql-active .ql-stroke {
+  stroke: #2bb757;
+}
+
+.quill-light .ql-toolbar button.ql-active .ql-fill {
+  fill: #2bb757;
+}
+
+/* Dark Mode Styles */
+.quill-dark .ql-toolbar {
+  border: 1px solid #475569;
+  border-radius: 8px 8px 0 0;
+  background: #334155;
+}
+
+.quill-dark .ql-container {
+  border: 1px solid #475569;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background: #1e293b;
+}
+
+.quill-dark .ql-editor {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f1f5f9;
+  min-height: 250px;
+}
+
+.quill-dark .ql-toolbar .ql-stroke {
+  stroke: #cbd5e1;
+}
+
+.quill-dark .ql-toolbar .ql-fill {
+  fill: #cbd5e1;
+}
+
+.quill-dark .ql-toolbar button:hover .ql-stroke {
+  stroke: #3DD56D;
+}
+
+.quill-dark .ql-toolbar button:hover .ql-fill {
+  fill: #3DD56D;
+}
+
+.quill-dark .ql-toolbar button.ql-active .ql-stroke {
+  stroke: #2bb757;
+}
+
+.quill-dark .ql-toolbar button.ql-active .ql-fill {
+  fill: #2bb757;
+}
+
+/* Dropdown Styles */
+.quill-light .ql-picker-label {
+  color: #374151;
+}
+
+.quill-dark .ql-picker-label {
+  color: #f1f5f9;
+}
+
+.quill-light .ql-picker-options {
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.quill-dark .ql-picker-options {
+  background: #1e293b;
+  border: 1px solid #475569;
+}
+
+.quill-light .ql-picker-item {
+  color: #374151;
+}
+
+.quill-dark .ql-picker-item {
+  color: #f1f5f9;
+}
+
+.quill-light .ql-picker-item:hover {
+  background: #f3f4f6;
+  color: #2bb757;
+}
+
+.quill-dark .ql-picker-item:hover {
+  background: #334155;
+  color: #3DD56D;
+}
+
+/* Brand Color Overrides */
+.ql-editor strong {
+  font-weight: 600;
+}
+
+.ql-editor h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2bb757;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.ql-editor h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #23A455;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+/* List Styles */
+.ql-editor ul, .ql-editor ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.ql-editor li {
+  margin: 0.25rem 0;
+}
+
+/* Link Styles */
+.ql-editor a {
+  color: #2bb757;
+  text-decoration: underline;
+}
+
+.ql-editor a:hover {
+  color: #23A455;
+}
+
+/* Focus Styles */
+.quill-light .ql-container.ql-focused {
+  border-color: #3DD56D;
+  box-shadow: 0 0 0 3px rgba(61, 213, 109, 0.1);
+}
+
+.quill-dark .ql-container.ql-focused {
+  border-color: #3DD56D;
+  box-shadow: 0 0 0 3px rgba(61, 213, 109, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ql-toolbar {
+    padding: 8px;
+  }
+
+  .ql-editor {
+    min-height: 200px;
+    font-size: 13px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .ql-editor {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    color: black !important;
+  }
+
+  .ql-editor h3 {
+    color: #2bb757 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ql-editor h4 {
+    color: #23A455 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ql-editor a {
+    color: #2bb757 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Custom Color Picker Styles */
+.ql-color .ql-picker-options {
+  width: 168px;
+}
+
+.ql-background .ql-picker-options {
+  width: 168px;
+}
+
+/* Tooltip Styles */
+.ql-tooltip {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.quill-dark .ql-tooltip {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+.ql-tooltip input {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.quill-dark .ql-tooltip input {
+  border: 1px solid #475569;
+  background: #334155;
+  color: #f1f5f9;
+}
